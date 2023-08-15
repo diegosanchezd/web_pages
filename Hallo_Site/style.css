@@ -1,0 +1,519 @@
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #000;
+    color: #eee;
+    line-height: 1.5;
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/* _____NAVBAR_________ */
+
+.show{
+    display: block !important;
+    z-index: 200;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    transition: .7s;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li > a{
+    display: block;
+    position: relative;
+    padding: 20px 15px 10px 15px;
+    text-decoration: none;
+    color: #eee;
+}
+
+nav ul li .link::before{
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #eee;
+    transition: transform .5s ease;
+    transform: scaleX(0);
+}
+
+nav ul li .link:hover::before{
+    transform: scale(1);
+}
+
+nav ul{
+    font-weight: bold;
+}
+
+.menu{
+    display: none;
+    flex-direction: column;
+    height: 300px;
+    position: relative;
+    min-width: 200px;
+    background: #eee;
+    
+}
+
+nav .menu a{
+    padding: 10px;
+    text-decoration: none;
+    color: #111;
+    display: none;
+    background: #eee;
+}
+
+.more{
+    display: none;
+}
+
+nav .menu a:hover{
+    background: #111;
+    color: #eee;
+}
+
+nav .mobile{
+    display: none;
+    width: 100%;
+}
+
+nav .mobile .header{
+    background: #111;
+    display: flex;
+    width: 100%;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav .mobile .header a{
+    color: #eee;
+    text-decoration: none;
+}
+
+nav .mobile .links{
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+}
+nav .mobile .links a{
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav .mobile .links a:hover{
+    background: #fff;
+    color: #111;
+}
+
+nav .mobile a{
+    display: inline-flex;
+}
+
+
+
+.links-rendered{
+    display: flex !important;
+}
+
+/* ____HEADER____________ */
+
+header{
+    background-image: url(img/halo-infinite-cover-darkmode.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center top;
+    transition: .5s;
+}
+
+/* ____BANNER____________ */
+
+#banner{
+    font-size: 1.8em;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    width: 400px;
+    position: absolute;
+    top: 150px;
+    right: 90px;
+    padding: 30px;
+}
+
+.green-button{
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: greenyellow;
+    color: #111;
+    font-weight: bolder;
+    padding: 10px 40px;
+    transition: .3s;
+}
+
+.green-button:hover{
+    background: rgb(117, 179, 24);
+}
+
+.green-link{
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: greenyellow;
+    font-weight: bolder;
+    padding: 10px 40px;
+    position: relative;
+}
+
+.green-link::before{
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: greenyellow;
+    transition: transform .5s ease;
+    transform: scaleX(0);
+}
+
+.green-link:hover::before{
+    transform: scale(1);
+}
+
+ h2{
+    font-size: 2.8rem;
+    position: relative;
+    display: inline-block;
+}
+h2::before{
+    content: "";
+    position: absolute;
+    background: greenyellow;
+    width: 100%;
+    height: 35px;
+    bottom: -20px;
+    left: 0;
+    transform: scale(.4) skewY(-20deg) rotate(20deg);
+}
+
+/* ____VIDEOS____________ */
+
+#videos{
+    text-align: center;
+    padding: 20px;
+    background-image: url(img/bg-videos.png);
+    background-position: bottom center;
+    background-size: cover;
+    width: 100%;
+}
+
+#videos h3{
+    font-size: 1.6em;
+    margin: 80px 0 0 0;
+}
+
+#videos p{
+    font-size: 14px;
+}
+
+#videos #slider #controls{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 0
+}
+
+#videos #slider #controls button{
+    width: 70px;
+    height: 40px;
+    border: none;
+    background: #333;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+#videos #slider #controls button:hover{
+    background: #222;
+}
+
+#videos #slider #current{
+    width: 90%;
+    margin: 30px auto;
+}
+
+#videos #slider #videos-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 70px 0;
+}
+
+#videos #slider #videos-container .item{
+    width: 220px;
+    border: 1px solid #48e;
+    position: relative;
+}
+
+#videos #slider #videos-container .item::before{
+    font-family: "Material Icons";
+    content: "";
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    left: 80px;
+    top: 35px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 100;
+}
+
+#videos #slider #videos-container .item img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#videos #slider #videos-container .item:hover img{
+    transition: .5s;
+    opacity: 0.6;
+
+}
+
+/* ____MULTIPLAYER___________ */
+
+#multi-player{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100vh;
+    background-image: url(img/bg-multiplayer.jpeg);
+    background-size: cover;
+    /* box-shadow: inset 0 0 100px #000; */
+}
+
+#multi-player .info{
+    width: 500px;
+    line-height: 1.2;
+    padding: 20px;
+    margin-right: 40px;
+    color: #000;
+}
+
+#multi-player .info p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ____GET_THE_GAME____________ */
+
+#get-the-game{
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+.item-store{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.item-store .left{
+    flex-grow: 1;
+}
+
+.item-store .left img{
+    width: 300px;
+}
+
+.item-store .right{
+    width: 100%;
+    flex-grow: 1;
+    text-align: start;
+    padding-left: 170px;
+}
+/*____FOOTER_______  */
+footer{
+    margin: 70px 0 0 0;
+    height: 600px;
+    background-image: url(img/master-chief-darkmode.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+/* ____MEDIA_QUERIES____________ */
+
+@media screen and (max-width: 1020px){
+    nav .link-hide{
+        display: none;
+    }
+
+    nav .more{
+        display: flex;
+    }
+
+    nav .menu a{
+        display: flex;
+        height: min-content;
+        
+    }
+
+    nav .menu{
+        height: min-content;
+        position: absolute;
+        margin-top: 50px;
+    }
+
+    header{
+        height: 70vh;
+    }
+
+    #banner{
+        position: initial;
+        width: 100%;
+    }
+
+    
+    #videos #slider #current{
+        width: 80%;
+    }
+
+    #videos #slider #current iframe{
+        height: 300px;
+    }
+    #videos #slider .item{
+        display: none;
+    }
+
+    #multi-player .info{
+        background: rgba(0, 0, 0, 0.5);
+        margin: 0 auto;
+        color: #fff;
+    }
+
+    .item-store{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item-store .left img{
+        width: 80%;
+        max-height: 600px;
+        margin: 0 auto;
+    }
+
+    .item-store .right{
+        padding-left: 0px;
+    }
+    #get-the-game{
+        height: 70vh;
+    }
+
+    footer{
+        margin-top: 600px;
+        height: 500px;
+    }
+
+}
+
+
+@media screen and (max-width: 615px){
+    nav ul{
+        display: none;
+    }
+
+    nav .mobile{
+        display: block;
+    }
+
+    nav{
+        padding: 0;
+    }
+
+    nav .mobile .header{
+        width: 100%;
+    }
+
+    #bmenu{
+        cursor: pointer;
+    }
+
+    header{
+        height: 50vh;
+        background-position: center 10px;
+    }  
+    #videos #slider #current iframe{
+        height: 200px;
+    }
+    #videos #slider #current{
+        width: 70%;
+    }
+
+    #multi-player{
+        background-position: -130px 0px;
+    }
+    .info{
+        width: 80% !important;
+    }
+    .info h2{
+        font-size: 30px;
+    }
+    .info p{
+        font-size: 15px !important;
+    }
+
+    footer{
+        height: 280px;
+        margin-top: 550px;
+    }
+  
+}
+
+@media screen and (max-width: 550px){
+    #videos #slider #current iframe{
+        height: 140px;
+    }
+}

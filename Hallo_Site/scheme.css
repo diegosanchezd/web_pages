@@ -1,0 +1,23 @@
+
+
+
+.header-light{
+    background-image: url(img/halo-infinite-cover.jpeg);
+}
+
+.body{
+    background: #fff;
+    color: #111;
+}
+
+.h3-active{
+    color: #111;
+}
+
+.footer-active{
+    background-image: url(img/master-chief.jpg);
+}
+
+.nav-active{
+    background: rgba(0 , 0, 0, 0.5);
+}
